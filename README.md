@@ -1,2 +1,0 @@
-# htbacademy
-Just write ups
