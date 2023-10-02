@@ -19,4 +19,13 @@ A penetration test may be performed from various perspectives, such as "black bo
 
 # Evasive Testing
 
-Finally, we may be asked to perform evasive testing throughout the assessment. In this type of assessment, we will try to remain undetected for as long as possible and see what kind of access, if any, we can obtain while working stealthily. This can help to simulate a more advanced attacker. However, this type of assessment is often limited by time constraints that are not in place for a real-world attacker. A client may also opt for a longer-term adversary simulation that may occur over multiple months, with few company staff aware of the assessment and few or no client staff knowing the exact start day/time of the assessment. This assessment type is well-suited for more security mature organizations and requires a bit of a different skill set than a traditional network/application penetration tester.
+Finally, we may be asked to perform evasive testing throughout the assessment. In this type of assessment, we will try to remain undetected for as long as possible and see what kind of access, if any, we can obtain while working stealthily. This can help to simulate a more advanced attacker. However, this type of assessment is often limited by time constraints that are not in place for a real-world attacker. A client may also opt for a longer-term adversary simulation that may occur over multiple months, with few company staff aware of the assessment and few or no client staff knowing the exact start day/time of the assessment. This 
+assessment type is well-suited for more security mature organizations and requires a bit of a different skill set than a traditional network/application penetration tester.
+
+
+# Answer of Questions
+#What component of a report should be written in a simple to understand and non-technical manner?
+Answer: `executive summary`
+
+#It is a good practice to name and recommend specific vendors in the component of the report mentioned in the last question. True or False? 
+Answer: `False`
