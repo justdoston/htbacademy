@@ -1,4 +1,4 @@
- #Vulnerability Assessment 
+# Vulnerability Assessment 
 
 Vulnerability assessments involve running an automated scan of an environment to enumerate vulnerabilities. 
 These can be authenticated or unauthenticated. No exploitation is attempted, but we will often look to validate scanner 
