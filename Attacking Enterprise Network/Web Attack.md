@@ -200,7 +200,7 @@ It has **XXE** vulnerability of message filed from **/ticket.php** page
 ```
 we will wait nc listener:
 `nc -lvnp 9000`
-file:///home/hunter/Pictures/Screenshots/Screenshot%20from%202023-10-05%2016-48-18.png![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/bb57ca15-c221-4834-8f5f-8cc4c451a736)
+![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/bb57ca15-c221-4834-8f5f-8cc4c451a736)
 
 After executing above payload we have:
 ```bash
