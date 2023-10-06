@@ -47,7 +47,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 ```
 
 When I tried to enter **/upload.php** directory it said **403 forbidden** which is very suspicious because output of gobuster is **Status 200** 
-I tried to use **Brute Force** to change request method every method gave me error except **TRACKING**
+I tried to use **Brute Force** to change request method every method gave me error except **TRACK**
 
 ![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/3d64cb64-0bf8-44cf-bf3b-76e1efaa15f8)
 
