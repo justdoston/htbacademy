@@ -9,7 +9,7 @@ I tried to gobuster for enumerate .php files:
 gobuster dir -u http://dev.inlanefreight.local -w /usr/share/wordlists/dirb/common.txt -x .php -t 300
 ```
 
-##output:
+## output:
 ```bash
 ===============================================================
 Gobuster v3.1.0
