@@ -28,8 +28,8 @@ The `--increment` flag can be used to increment the mask length automatically
 with a length limit that can be supplied using the `--increment-max` flag.
 
 ## Task
-Crack the following MD5 hash using a mask attack: 50a742905949102c961929823a2e8ca0. 
-Use the following mask: -1 02 'HASHCAT?l?l?l?l?l20?1?d'
+Crack the following MD5 hash using a mask attack: `50a742905949102c961929823a2e8ca0` 
+Use the following mask: `-1 02 'HASHCAT?l?l?l?l?l20?1?d'`
 ## Solve
 ```bash
 hashcat -a 3 -m 0 50a742905949102c961929823a2e8ca0 -1 02 'HASHCAT?l?l?l?l?l20?1?d'
