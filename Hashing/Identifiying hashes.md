@@ -1,9 +1,9 @@
 Sometimes, hashes are stored in certain formats. For example, hash:salt or $id$salt$hash.
 
-The hash 2fc5a684737ce1bf7b3b239df432416e0dd07357:2014 is a SHA1 hash with the salt of 2014.
+The hash `2fc5a684737ce1bf7b3b239df432416e0dd07357:2014` is a SHA1 hash with the salt of 2014.
 
-The hash $6$vb1tLY1qiY$M.1ZCqKtJBxBtZm1gRi8Bbkn39KU0YJW1cuMFzTRANcNKFKR4RmAQVk4rqQQCkaJT6wXqjUkFcA/qNxLyqW.U/ 
-contains three fields delimited by $, where the first field is the id, i.e., 6. 
+The hash `$6$vb1tLY1qiY$M.1ZCqKtJBxBtZm1gRi8Bbkn39KU0YJW1cuMFzTRANcNKFKR4RmAQVk4rqQQCkaJT6wXqjUkFcA/qNxLyqW.U/` 
+contains three fields delimited by `$`, where the first field is the id, i.e., 6. 
 This is used to identify the type of algorithm used for hashing. The following list contains some ids and their corresponding algorithms.
 ```bash
 $1$  : MD5
