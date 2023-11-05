@@ -4,7 +4,7 @@
 **Reciever** `echo -n base64payload | base64 -d > filename`   Confirm md5 hash match in linux: `md5sum file`
 
 # Netcat
-**Sender:** `nc 10.10.10.10 4444 < file`<br>
+**Sender:** `nc --send-only 10.10.10.10 4444 < file`<br>
 **Reciever:** `nc -lvp 4444 > file`
 
 # Web 
@@ -32,6 +32,11 @@ Without password from `/usr/share/doc/python3-impacket/examples`<br>
 With password:<br>
 **Sender:** `python3 smbserver.py -username admin -password 8618 adminshare /home/hunter`<br>
 **Reciever:** `smbclient -U admin //192.168.0.107/adminshare` <br>
+
+# Xfreerdp
+```bash
+xfreerdp /v:10.10.10.132 /d:HTB /u:administrator /p:'Password0@' /drive:linux,/home/plaintext/htb/academy/filetransfer
+```
 
 # Upload server
 
