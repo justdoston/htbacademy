@@ -1,4 +1,3 @@
 # Command Injection Methods
 
-Injection Operator	  Injection Character	  URL-Encoded Character	  Executed Command
-Semicolon                      ;                   %3b                    Both
+![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/ccfe7d9d-e002-40d8-a1d4-885f8acf609b)
