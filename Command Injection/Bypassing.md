@@ -15,3 +15,22 @@ total 0
 drwxr-xr-x 1 21y4d 21y4d   0 Jul 13 07:37 .
 drwxr-xr-x 1 21y4d 21y4d   0 Jul 13 13:01 ..
 ```
+## Advanced tech
+
+For example, if we look at the $PATH environment variable in Linux, it may look something like the following:
+
+```
+dostonbek@htb[/htb]$ echo ${PATH}
+
+/usr/local/bin:/usr/bin:/bin:/usr/games
+```
+So, if we start at the 0 character, and only take a string of length 1, we will end up with only the / character, which we can use in our payload:
+```
+dostonbek@htb[/htb]$ echo ${PATH:0:1}
+
+/
+```
+
+
+
+
