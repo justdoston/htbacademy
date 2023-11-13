@@ -16,3 +16,13 @@ hunter
 The important things to remember are that `we cannot mix types of quotes and the number of quotes must be even`. We can try one of the above in our payload `(127.0.0.1%0aw'h'o'am'i)` and see if it works:
 
 ![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/a317fa0d-8f3c-4c4d-bcba-aff63fa20538)
+
+## Linux Only
+```
+who$@ami
+w\ho\am\i
+```
+## Windows Only
+```
+who^ami
+```
