@@ -15,7 +15,7 @@ total 0
 drwxr-xr-x 1 21y4d 21y4d   0 Jul 13 07:37 .
 drwxr-xr-x 1 21y4d 21y4d   0 Jul 13 13:01 ..
 ```
-## Advanced tech
+# Advanced tech
 
 For example, if we look at the $PATH environment variable in Linux, it may look something like the following:
 
@@ -30,7 +30,32 @@ dostonbek@htb[/htb]$ echo ${PATH:0:1}
 
 /
 ```
-
+## Example:
+```
+┌──(hunter㉿kali)-[~]
+└─$ echo ${PATH}    
+/home/hunter/.local/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/hunter/.dotnet/tools
+                                                                                              
+┌──(hunter㉿kali)-[~]
+└─$ echo ${PATH:0:1}
+/
+                                                                                                                                                      
+┌──(hunter㉿kali)-[~]
+└─$ echo ${PATH:0:2}
+/h
+                                                                                                                                                      
+┌──(hunter㉿kali)-[~]
+└─$ echo ${PATH:1:2}
+ho
+                                                                                                                                                      
+┌──(hunter㉿kali)-[~]
+└─$ echo ${PATH:1:1}
+h
+                                                                                                                                                      
+┌──(hunter㉿kali)-[~]
+└─$ echo ${PATH:23:1}
+:
+```
 
 
 
