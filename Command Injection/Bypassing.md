@@ -5,3 +5,12 @@ Let us use `${IFS}` and see if it works (127.0.0.1%0a${IFS}):
 
 ![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/db622f74-4781-4f5c-818c-f4f628f9288c)
 We see that our request was not denied this time, and we bypassed the space filter again.
+
+## Using Brace Expansion
+There are many other methods we can utilize to bypass space filters. For example, we can use the Bash Brace Expansion feature, which automatically adds spaces between arguments wrapped between braces, as follows:
+
+dostonbek@htb[/htb]$ {ls,-la}
+
+total 0
+drwxr-xr-x 1 21y4d 21y4d   0 Jul 13 07:37 .
+drwxr-xr-x 1 21y4d 21y4d   0 Jul 13 13:01 ..
