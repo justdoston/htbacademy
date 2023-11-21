@@ -1,10 +1,14 @@
 # First of all enumeration !
 
-**OS Version**<br>`uname -a` and `cat /etc/os-release`<br>
+**OS Version**`uname -a` and `cat /etc/os-release`<br>
 **Kernel Version** `uname -r`<br>
 **Running Services**<br>
-## Linux current process:
+**Linux current process:**
 ```bash
 ps aux | grep root
+```
+**Full basic system info**
+```bash
+hostnamectl and neofetch
 ```
 **Installed Packages and Versions**
