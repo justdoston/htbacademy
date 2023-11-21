@@ -12,3 +12,8 @@ ps aux | grep root
 hostnamectl and neofetch
 ```
 **Installed Packages and Versions**
+**Logged in users:**
+```bash
+ps au
+w
+```
