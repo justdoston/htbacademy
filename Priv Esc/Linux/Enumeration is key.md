@@ -31,6 +31,8 @@ w
 **All Hidden Files:** `find / -type f -name ".*" -exec ls -l {} \; 2>/dev/null`<br>
 **All Hidden Directories:** `find / -type d -name ".*" -ls 2>/dev/null`<br>
 **Finding History Files:** `find / -type f \( -name *_hist -o -name *_history \) -exec ls -l {} \; 2>/dev/null`<br>
+**Configuration Files:** `find / -type f \( -name *.conf -o -name *.config \) -exec ls -l {} \; 2>/dev/null`<br>
+**Scripts:** `find / -type f -name "*.sh" 2>/dev/null | grep -v "src\|snap\|share"`<br>
 
 ## System and Services
 
@@ -48,7 +50,15 @@ find /proc -name cmdline -exec cat {} \; 2>/dev/null | tr " " "\n"
 ```bash
 apt list --installed | tr "/" " " | cut -d" " -f1,3 | sed 's/[0-9]://g' | tee -a installed_pkgs.list
 ```
-
+**Binaries:**
+```bash
+ls -l /bin /usr/bin/ /usr/sbin/
+```
+**Trace System Calls**
+The output of strace can be written to a file for later analysis, and it provides a wealth of options that allow detailed monitoring of the program's behavior.
+```bash
+strace ping -c 1 192.168.X.X
+```
 
 
 
