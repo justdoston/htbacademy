@@ -23,7 +23,7 @@ w
 # Enumeration permission based
 
 **Sudo privilege:** `sudo -l`<br>
-**Suid bit set:** `find / -user root -perm -4000 -exec ls -ldb {} \; 2>/dev/null` or `find / -perm -u=s -type f 2>/dev/null`<br>
+**Suid bit set:** `find / -user root -perm -4000 -exec ls -ldb {} \; 2>/dev/null` or `find / -perm -u=s -type f 2>/dev/null` or  `find / -perm -4000 2>/dev/null`<br>
 **Setguid bit set:** `find / -user root -perm -6000 -exec ls -ldb {} \; 2>/dev/null`<br>
 **Capabilities:** `find /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin -type f -exec getcap {} \;`<br>
 **Writable Directories:** `find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null`<br>
