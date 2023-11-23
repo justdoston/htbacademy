@@ -21,7 +21,7 @@ From powershell:
 Get-Process lsass
 ```
 ![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/8c135bc0-9a1f-44a2-a432-cdee2a4b815e)
-Once we have the PID assigned to the LSASS process, we can create the dump file.
+<br>Once we have the PID assigned to the LSASS process, we can create the dump file.
 
 From powershell:
 ```bash
