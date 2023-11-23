@@ -14,7 +14,7 @@ Upon initial logon, LSASS will:
 ```bash
 tasklist /svc
 ```
-![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/564013af-c946-4535-b81d-2bdce653888e)
+![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/564013af-c946-4535-b81d-2bdce653888e)<br>
 We can see PID of lsass is `672`<br>
 From powershell:
 ```bash
