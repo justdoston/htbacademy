@@ -1,5 +1,5 @@
 # Copying SAM Registry Hives
-**What we need?**
+**What we need?**<br>
 ---Local admin user with password from windows target
 
 There are three registry hives that we can copy if we have local admin access on the target; each will have a specific purpose when we get to dumping and cracking the hashes. Here is a brief description of each in the table below:
