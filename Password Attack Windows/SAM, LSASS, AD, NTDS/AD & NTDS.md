@@ -8,3 +8,13 @@ Keep in mind that we can also study NTDS attacks by keeping track of this [techn
 # Capturing NTDS.dit
 The `.dit` stands for directory information tree. This is the primary database file associated with AD and stores all domain **usernames**, password **hashes**, and other critical schema information.
 `NT Directory Services (NTDS)` is the directory service used with AD to find & organize network resources. Recall that `NTDS.dit` file is stored at %systemroot$/ntds on the domain controllers in a [forest](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/using-the-organizational-domain-forest-model).
+
+To make a copy of the `NTDS.dit` file, we need `local admin` (Administrators group) or `Domain Admin` (Domain Admins group) (or equivalent) rights.<br>
+Checking local group membership from powershell:
+```bash
+net localgroup
+```
+Checking User Account Privileges including Domain
+```bash
+net user username
+```
