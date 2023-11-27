@@ -33,6 +33,6 @@ kerberos::ptt "C:\Users\plaintext\Desktop\Mimikatz\[0;6c680]-2-0-40e10000-plaint
 ```
 ![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/6ae5912e-a38d-48da-a0c9-c4c2911b9fbf)
 
-```bash
+``
 Note: Instead of opening mimikatz.exe with cmd.exe and exiting to get the ticket into the current command prompt, we can use the Mimikatz module misc to launch a new command prompt window with the imported ticket using the misc::cmd command.
-```
+``
