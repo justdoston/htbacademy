@@ -23,7 +23,7 @@
 
 # FTP
 **Sender:** `python3 -m pyftpdlib -p21 -w` or `python3 -m pyftpdlib -u admin -P 8618` with user and password<br>
-**Receiever** `ftp IP port` and put, get commands
+**Receiever** `ftp IP port` and put, get commands | From windows: `ftp` then `open`
 
 # SMB
 Without password from `/usr/share/doc/python3-impacket/examples`<br>
